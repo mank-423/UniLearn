@@ -4,13 +4,17 @@ import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Home from './Pages/Home'
 import Subject from './Pages/Subject'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 
 export default function App() {
 
   return (
     <div>
+
       <>
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
@@ -19,6 +23,8 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </>
+
+
 
     </div>
   )

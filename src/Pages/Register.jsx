@@ -76,70 +76,80 @@ function Register() {
 
     return (
         <div>
-            <h1>Register</h1>
-            <form onSubmit={registerUser}>
-                {/* Name of the user */}
-                <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    type="text"
-                    placeholder="Name"
-                />
+            <div className=''>
+                <h1 className='text-3xl font-extrabold underline flex justify-center items-center pt-4'>Sign up</h1>
+                <center>
+                    <br />
+                    <form onSubmit={registerUser} className='inline-block p-7 border-2 border-black rounded-2xl'>
+                        {/* Name of the user */}
+                        <input
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className='mt-1 rounded-2xl border-2 border-grey p-2'
+                            type="text"
+                            placeholder="Name"
+                        />
 
-                {/* Email */}
-                <br />
-                <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    onBlur={validateEmail} /* Add the onBlur event handler */
-                    type="text"
-                    id="email"
-                    placeholder="Email"
-                />
+                        {/* Email */}
+                        <br />
+                        <input
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            onBlur={validateEmail} /* Add the onBlur event handler */
+                            type="text"
+                            id="email"
+                            className='mt-2 rounded-2xl border-2 border-grey p-2'
+                            placeholder="Email"
+                        />
 
-                {/* Username */}
-                <br />
-                <input
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    type="text"
-                    placeholder='Username'
-                />
+                        {/* Username */}
+                        <br />
+                        <input
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            type="text"
+                            className='mt-2 rounded-2xl border-2 border-grey p-2'
+                            placeholder='Username'
+                        />
 
-                {/* Password */}
-                <br />
-                <input
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    placeholder='Password'
-                />
+                        {/* Password */}
+                        <br />
+                        <input
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
+                            className='mt-2 rounded-2xl border-2 border-grey p-2'
+                            placeholder='Password'
+                        />
 
-                {/* Course */}
-                <br />
-                <input
-                    value={course}
-                    onChange={(e) => setCourse(e.target.value)}
-                    //onBlur={validateCourse}
-                    id="course"
-                    type="text"
-                    placeholder='Course'
-                />
+                        {/* Course */}
+                        <br />
+                        <input
+                            value={course}
+                            onChange={(e) => setCourse(e.target.value)}
+                            //onBlur={validateCourse}
+                            id="course"
+                            className='mt-2 rounded-2xl border-2 border-grey p-2'
+                            type="text"
+                            placeholder='Course'
+                        />
 
-                {/* Year */}
-                <br />
-                <input
-                    value={year}
-                    onChange={(e) => setYear(e.target.value)}
-                    type="text"
-                    placeholder='Year'
-                />
+                        {/* Year */}
+                        <br />
+                        <input
+                            value={year}
+                            onChange={(e) => setYear(e.target.value)}
+                            type="text"
+                            className='mt-2 rounded-2xl border-2 border-grey p-2'
+                            placeholder='Year'
+                        />
 
-                {/* Btn */}
-                <br />
-                <input type="submit" value="Register" />
-            </form>
-
+                        {/* Btn */}
+                        <br />
+                        <input type="submit" value="Sign Up" className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md' />
+                    </form>
+                </center>
+            </div>
 
         </div>
     )

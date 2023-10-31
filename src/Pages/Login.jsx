@@ -53,27 +53,32 @@ function Login() {
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={loginUser}>
-                <input
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    type="text"
-                    placeholder="Username"
-                />
+            <h1 className='text-3xl font-extrabold underline flex justify-center items-center pt-4'>Login</h1>
+            <center>
                 <br />
-                <input
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    placeholder="Password"
-                />
-                <br />
-                <input type="submit" value="Login" />
-                <Link to="/register">
-                    <button>Register user</button>
-                </Link>
-            </form>
+                <form onSubmit={loginUser} className='inline-block p-7 border-2 border-black rounded-2xl'>
+                    <input
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        type="text"
+                        className='mt-2 rounded-2xl border-2 border-grey p-2'
+                        placeholder="Username"
+                    />
+                    <br />
+                    <input
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        className='mt-1 rounded-2xl border-2 border-grey p-2'
+                        placeholder="Password"
+                    />
+                    <br />
+                    <input type="submit" value="Login" className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md' />
+                    <Link to="/register">
+                        <button className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md'> Sign up</button>
+                    </Link>
+                </form>
+            </center>
         </div>
     );
 }
