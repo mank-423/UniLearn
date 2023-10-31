@@ -1,4 +1,4 @@
-# UniLean v1.0
+# UniLearn v1.0
 Ideation of the app(Ongoing project)
 1. Working on Login completed(using localStorage for now to hold on to login for 1 hr)
 2. Working on UI still going on
