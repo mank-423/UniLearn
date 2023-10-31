@@ -73,9 +73,9 @@ function Login() {
                         placeholder="Password"
                     />
                     <br />
-                    <input type="submit" value="Login" className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md' />
+                    <input type="submit" value="Login" className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-blue-700 rounded-xl transition duration-300 ease-in-out hover:rounded-md' />
                     <Link to="/register">
-                        <button className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md'> Sign up</button>
+                        <button className='px-4 py-2 mt-2 border-2 border-white text-white bg-blue-500 hover:bg-blue-700 rounded-xl transition duration-300 ease-in-out hover:rounded-md'> Sign up</button>
                     </Link>
                 </form>
             </center>
