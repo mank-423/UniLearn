@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import headerLogo from '../assets/images/logo.jpg';
 import hamburger from '../assets/icons/hamburger.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -10,8 +10,27 @@ const navLinks = [
   { href: "#contact-us", label: "Contact Us" },
 ];
 
+
+
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const [login, setLogin] = useState("");
+
+  const navigate = useNavigate();
+
+  //I just removed the dependency array
+  // And now I can see the changes on navbar
+  // of conditional rendering
+  useEffect(() => {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      setLogin(savedUsername);
+    }
+  });
+
+  // useEffect(()=>{
+  //   window.location.reload()
+  // }, [])
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
@@ -20,6 +39,21 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setMobileMenuVisible(false);
   };
+
+  const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  const deleteCredentials = () => {
+    localStorage.removeItem('username');
+    setLogin("");
+    navigate('/login');
+  }
 
   return (
     <header className='px-6 lg:px-12 py-1 relative z-10 w-full'>
@@ -55,17 +89,46 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+
+          {/* Division for buttons */}
           <div className='ml-52 mr-0'>
-            <Link to="/login">
-              <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
-                Login
-              </button>
-            </Link>
-            <Link to={"/register"}>
-              <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
-                Signup
-              </button>
-            </Link>
+            {login
+              ?
+              (
+                <div className='flex'>
+
+                  <div
+                    className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-5'
+                    style={{ backgroundColor: getRandomColor() }}>
+                    {login[0].toUpperCase()}
+                  </div>
+
+                  <div className='flex justify-center items-center'>
+                    <button
+                      className='text-md mx-3 px-2 py-2 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'
+                      onClick={deleteCredentials}>
+                      Log-out
+                    </button>
+                  </div>
+
+                </div>
+              )
+              :
+              (
+                <div>
+                  <Link to="/login">
+                    <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                      Login
+                    </button>
+                  </Link>
+                  <Link to={"/register"}>
+                    <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                      Signup
+                    </button>
+                  </Link>
+                </div>
+              )
+            }
           </div>
         </ul>
       </nav>
@@ -84,17 +147,43 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
+
+            {/* Division for buttons */}
             <div className='flex justify-center items-center'>
-            <Link to="/login">
-              <button className='lg:mx-8 lg:px-2 mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
-                Login
-              </button>
-            </Link>
-            <Link to={"/register"}>
-              <button className='lg:mx-8 lg:px-2 mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
-                Signup
-              </button>
-            </Link>
+              {login
+                ?
+                (
+                  <div className='flex'>
+                    <div
+                      className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-4'
+                      style={{ backgroundColor: getRandomColor() }}>
+                      {login[0].toUpperCase()}
+                    </div>
+
+                    <button
+                      className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'
+                      onClick={deleteCredentials}>
+                      Log-out
+                    </button>
+
+                  </div>
+                )
+                :
+                (
+                  <div>
+                    <Link to="/login">
+                      <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                        Login
+                      </button>
+                    </Link>
+                    <Link to={"/register"}>
+                      <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                        Signup
+                      </button>
+                    </Link>
+                  </div>
+                )
+              }
             </div>
           </ul>
         </div>

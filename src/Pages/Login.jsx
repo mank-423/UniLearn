@@ -34,6 +34,9 @@ function Login() {
             localStorage.setItem('username', username);
 
             // Set a timer to clear local storage after 1 hour (3600 seconds)
+            //  60000 1 minute to check *it works fine for 1 minute
+            // And it will delete the credentials after 1 hr 
+        
             setTimeout(() => {
                 localStorage.removeItem('username');
             }, 3600000);
