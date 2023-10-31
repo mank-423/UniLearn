@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import headerLogo from '../assets/images/logo.jpg';
 import hamburger from '../assets/icons/hamburger.svg';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -21,8 +22,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className='px-6 lg:px-20 py-2 relative z-10 w-full'>
-      <nav className='flex justify-between items-center max-container'>
+    <header className='px-6 lg:px-12 py-1 relative z-10 w-full'>
+      <nav className='flex justify-between items-center max-container ml-16'>
         <a href="/">
           <img
             className='rounded-3xl'
@@ -43,29 +44,37 @@ const Navbar = () => {
           />
         </div>
 
-        <ul className='flex-1 flex justify-center items-center gap-16 max-lg:hidden'>
+        <ul className='flex-1 flex justify-center items-center gap-16 max-lg:hidden font-semibold ml-36'>
           {navLinks.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className='leading-normal text-lg text-slate-gray'
+                className='leading-normal text-md text-slate-gray border-b-2 border-transparent hover:border-blue-900 transition duration-500 ease-in-out'
               >
                 {item.label}
               </a>
             </li>
           ))}
-          <div>
-            <button className='lg:mx-8 lg:px-2 mx-3 px-2 border-black border-2'>Login</button>
-            <button className='lg:mx-8 lg:px-2 mx-3 px-2 border-black border-2'>Signup</button>
+          <div className='ml-52 mr-0'>
+            <Link to="/login">
+              <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                Login
+              </button>
+            </Link>
+            <Link to={"/register"}>
+              <button className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                Signup
+              </button>
+            </Link>
           </div>
         </ul>
       </nav>
 
       {mobileMenuVisible && (
         <div className='lg:hidden bg-white absolute top-16 right-0 left-0 px-4 py-2 border border-black'>
-          <ul>
+          <ul className='font-semibold'>
             {navLinks.map((item) => (
-              <li key={item.label}>
+              <li key={item.label} className='flex flex-col justify-center items-center'>
                 <a
                   href={item.href}
                   className='block text-lg text-slate-gray mb-2'
@@ -75,10 +84,18 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <div>
-              <button className='lg:mx-8 lg:px-2 mx-3 px-2 border-black border-2'>Login</button>
-              <button className='lg:mx-8 lg:px-2 mx-3 px-2 border-black border-2'>Signup</button>
-          </div>
+            <div className='flex justify-center items-center'>
+            <Link to="/login">
+              <button className='lg:mx-8 lg:px-2 mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                Login
+              </button>
+            </Link>
+            <Link to={"/register"}>
+              <button className='lg:mx-8 lg:px-2 mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'>
+                Signup
+              </button>
+            </Link>
+            </div>
           </ul>
         </div>
       )}

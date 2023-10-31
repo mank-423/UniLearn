@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-image {
+  background-image: url('./assets/images/cover1.jpg'); /* Replace 'your-image.jpg' with the path to your image file */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 490px; /* Adjust the height as needed */
+  /* You can add more styling using Tailwind CSS classes as needed */
+}
