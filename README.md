@@ -10,6 +10,13 @@ To run the project:
 3. As the backend is inside UniLearn folder, so for backend -> cd UniLearn -> cd server -> nodemon index.js or node index.js
 4. Now the server is spinned and running along with UI.
 
+Resources that I want to use:
+1. https://www.youtube.com/watch?v=-2YZRa3pMac&t=130s (GridFS tutorial)
+2. https://www.freecodecamp.org/news/gridfs-making-file-uploading-to-mongodb/ (GridFS freecodeCamp)
+3. https://www.react-spring.dev/docs/components/parallax (Parallax library react docs)
+4. https://codesandbox.io/s/h1rrv (It's implmentation for vertical parallax)
+5. [Inclusion of a timer on subjects page](https://dev.to/yuridevat/how-to-create-a-timer-with-react-7b9)
+
 Wireframe idaes: https://excalidraw.com/#json=vmEqij6cHaRF-jgst0Ist,qGlm8mRPFEi2oQEu6Sp0mA
 
 <img width="800" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/b4509167-84ad-4f81-8638-a73eefd3e381">
