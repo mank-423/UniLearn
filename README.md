@@ -1,7 +1,7 @@
 # UniLearn v1.0
 Ideation of the app(Ongoing project)
 1. Working on Login completed(using localStorage for now to hold on to login for 1 hr)
-2. Working on UI still going on
+2. Working on UI still going on(Home and about page done)
 3. Looking for a way to host PDF files and other files(Idea of using GridFS), but for v1 using iframe and link of Google Drive
 
 To run the project:
