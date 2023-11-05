@@ -76,7 +76,7 @@ function Register() {
 
     return (
         <div>
-            <div className=''>
+            <div className='mt-16'>
                 <h1 className='text-3xl font-extrabold underline flex justify-center items-center pt-4'>Sign up</h1>
                 <center>
                     <br />

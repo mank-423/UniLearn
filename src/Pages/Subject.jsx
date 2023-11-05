@@ -18,7 +18,7 @@ function Subject() {
     })
 
     return (
-        <div>
+        <div className='mt-16'>
             <div>
                 {name ? "Hello "+name : ''}
             </div>
