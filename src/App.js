@@ -4,8 +4,8 @@ import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Home from './Pages/Home'
 import Subject from './Pages/Subject'
-import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import About from './Pages/About'
 
 export default function App() {
 
@@ -17,6 +17,7 @@ export default function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />}/>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/subjects' element={<Subject />} />

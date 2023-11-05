@@ -4,7 +4,7 @@ import grid2 from '../assets/images/grid2.jpg'
 
 function Qualities() {
   return (
-    <div>
+    <div id='quality'>
       {/* bg-gradient-to-b from-[#020659] via-[#030A8C] to-[#040FD9] h-screen */}
       <div className='py-6 px-20'>
         {/* border-2 border-black  */}

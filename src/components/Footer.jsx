@@ -5,7 +5,7 @@ import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Footer() {
     return (
-        <div className='bg-[#232a87] text-white font-bold p-5'>
+        <div id="footer" className='bg-[#232a87] text-white font-bold py-20 px-4'>
 
             <div className='grid lg:grid-cols-4'>
                 {/* Logo */}
@@ -17,7 +17,7 @@ function Footer() {
             <div className='ml-10 mt-5 mb-2'>
                 <h1 className='font-semibold text-sm'>Useful Links</h1>
                 <Link to="/"><p className='font-light text-sm py-1'>Home</p></Link>
-                <Link to="/"><p className='font-light text-sm py-1'>About</p></Link>
+                <Link to="/about"><p className='font-light text-sm py-1'>About</p></Link>
             </div>
 
             {/* Contacts */}
@@ -47,6 +47,7 @@ function Footer() {
             </div>
             </div>
 
+            <br /><br />
             <hr className='mt-5'/>
             <h1 className='text-white flex justify-center items-center'>©2023-UniLearn</h1>
 

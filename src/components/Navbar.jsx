@@ -5,18 +5,28 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "#about-us", label: "About Us" },
+  { href: "/about", label: "About" },
   //{ href: "#products", label: "Products" },
-  { href: "#contact-us", label: "Contact Us" },
+  // { href: "#footer", label: "Contact" },
 ];
 
 
 
 const Navbar = () => {
+
+
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [login, setLogin] = useState("");
 
   const navigate = useNavigate();
+
+  function scrollToQuality(event) {
+    event.preventDefault();
+    const element = document.getElementById('footer');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
   //I just removed the dependency array
   // And now I can see the changes on navbar
@@ -91,6 +101,7 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <a href="#footer" onClick={scrollToQuality}><li>Contact</li></a>
 
             {/* Division for buttons */}
             <div className='ml-52 mr-0'>
@@ -149,6 +160,7 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <a href="#footer" onClick={scrollToQuality}><li className='flex justify-center items-center text-lg'>Contact</li></a>
 
               {/* Division for buttons */}
               <div className='flex justify-center items-center'>
