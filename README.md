@@ -1,4 +1,6 @@
 # UniLearn v1.0
+A project which focuses on making a learning portal for core subjects of university students alongwith a touch of notion, for organized study.
+
 Ideation of the app(Ongoing project)
 1. Working on Login completed(using localStorage for now to hold on to login for 1 hr)
 2. Working on UI still in progress (Home and about page done)
