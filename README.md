@@ -25,3 +25,14 @@ Wireframe idaes: https://excalidraw.com/#json=vmEqij6cHaRF-jgst0Ist,qGlm8mRPFEi2
 
 <img width="800" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/56ecb1ec-b240-4655-a2e5-04dbdd552c8d">
 
+UI for v1:
+- Home page
+<img width="960" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/a628c876-c1b9-409b-a502-1a7fd7f94395">
+
+- Login and signup page
+<img width="960" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/0649a5f6-cb9a-4112-8a0d-e09a333670ef">
+<img width="960" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/b415f039-9edf-4050-ae15-dc7a7210d1f5">
+
+- Portal with material
+<img width="960" alt="image" src="https://github.com/mank-423/UniLearn/assets/96490105/ed0af10c-f3b9-44b5-a201-26066ae7c73f">
+
