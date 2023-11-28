@@ -33,9 +33,9 @@ const Navbar = () => {
     event.preventDefault();
     const element = document.getElementById('footer');
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-}
+  }
 
   //I just removed the dependency array
   // And now I can see the changes on navbar
@@ -111,11 +111,13 @@ const Navbar = () => {
                 (
                   <div className='flex'>
 
-                    <div
-                      className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-5'
-                      style={{ backgroundColor: randomColor }}>
-                      {login[0].toUpperCase()}
-                    </div>
+                    <Link to='/profile'>
+                      <div
+                        className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-5'
+                        style={{ backgroundColor: randomColor }}>
+                        {login[0].toUpperCase()}
+                      </div>
+                    </Link>
 
                     <div className='flex justify-center items-center'>
                       <button
@@ -169,11 +171,13 @@ const Navbar = () => {
                   ?
                   (
                     <div className='flex'>
-                      <div
-                        className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-4'
-                        style={{ backgroundColor: randomColor }}>
-                        {login[0].toUpperCase()}
-                      </div>
+                      <Link to='/profile'>
+                        <div
+                          className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-5'
+                          style={{ backgroundColor: randomColor }}>
+                          {login[0].toUpperCase()}
+                        </div>
+                      </Link>
 
                       <button
                         className='text-md mx-3 px-4 py-1 border-2 border-blue-600 bg-transparent rounded-xl transition duration-300 ease-in-out hover:rounded-md hover:bg-blue-600 hover:text-white'

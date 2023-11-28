@@ -11,7 +11,7 @@ router.post('/', async(req, res)=>{
             driveLink : req.body.driveLink
         });
 
-        res.json({status: "subject added"});
+        res.json({status: "ok"});
     } catch (error) {
         res.json({status : "Error with data", err: error});
     }

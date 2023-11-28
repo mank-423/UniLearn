@@ -23,4 +23,21 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/:username', async(req, res)=>{
+  try {
+    const user = await User.findOne({ username: req.params.username });
+
+    // If username not found
+    if (!user) {
+      return res.json({ status: 'error', message: 'User not found' });
+    }
+
+    // Send user details
+    return res.json({ status: 'ok', user });
+
+  } catch (error) {
+    return res.json({status: 'error', error});
+  }
+})
+
 module.exports = router;
