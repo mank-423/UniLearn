@@ -11,12 +11,21 @@ const navLinks = [
 ];
 
 
+const getRandomColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 
 const Navbar = () => {
 
-
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [login, setLogin] = useState("");
+  const [randomColor, setRandomColor] = useState(getRandomColor());
 
   const navigate = useNavigate();
 
@@ -50,18 +59,10 @@ const Navbar = () => {
     setMobileMenuVisible(false);
   };
 
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
   const deleteCredentials = () => {
     localStorage.removeItem('username');
     setLogin("");
+    setRandomColor(getRandomColor());
     navigate('/login');
   }
 
@@ -112,7 +113,7 @@ const Navbar = () => {
 
                     <div
                       className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-5'
-                      style={{ backgroundColor: getRandomColor() }}>
+                      style={{ backgroundColor: randomColor }}>
                       {login[0].toUpperCase()}
                     </div>
 
@@ -170,7 +171,7 @@ const Navbar = () => {
                     <div className='flex'>
                       <div
                         className='border-2 border-black rounded-full text-white font-extrabold bg-red py-3 px-4'
-                        style={{ backgroundColor: getRandomColor() }}>
+                        style={{ backgroundColor: randomColor }}>
                         {login[0].toUpperCase()}
                       </div>
 
